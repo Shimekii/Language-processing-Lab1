@@ -29,7 +29,6 @@ sentences = sent_tokenize(text, language="russian")
 
 # Производим токенизацию
 pairs = []
-ALLOWED_ADJ_POS = {'ADJF', 'ADJS'}
 
 for sentence in sentences:
   tokens = word_tokenize(sentence, language="russian")
@@ -66,5 +65,6 @@ for sentence in sentences:
 # Выводм результат
 for pair in pairs:
   print(f'{pair[0]} {pair[1]}')
+
 
 
