@@ -65,6 +65,6 @@ for sentence in sentences:
 
 # Выводм результат
 for pair in pairs:
-
   print(f'{pair[0]} {pair[1]}')
+
 
