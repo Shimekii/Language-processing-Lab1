@@ -6,12 +6,9 @@ import pymorphy3
 
 nltk.download('punkt_tab')
 
-# Подключаем гугл диск
-drive.mount('/content/drive')
-
 # Инициализируем морфологический анализатор и считываем текст с файла
 morph = pymorphy3.MorphAnalyzer()
-with open('/content/drive/MyDrive/Обработка языка/text.txt', 'r', encoding="utf-8") as file:
+with open('text.txt', 'r', encoding="utf-8") as file:
     text = file.read().replace('\n', ' ')
 print(text)
 
@@ -67,4 +64,5 @@ for sentence in sentences:
 
 # Выводм результат
 for pair in pairs:
+
   print(f'{pair[0]} {pair[1]}')
