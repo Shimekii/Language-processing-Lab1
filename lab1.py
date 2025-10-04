@@ -45,9 +45,10 @@ for sentence in sentences:
 
       pos1 = info1['pos']
       pos2 = info2['pos']
-
-      # Проверяем пары слов на принадлежность к частям речи (существительное + прилагательное)
-      if not ((pos1 == 'NOUN' and pos2 in ALLOWED_ADJ_POS) or (pos1 in ALLOWED_ADJ_POS and pos2 == 'NOUN')):
+      
+      # Проверяем пары слов на принадлежность к частям речи (существительное + существительное, существительное + прилагательное
+      # приталагательное + существительное, прилагательное + прилагательное)
+      if not (pos1 in ['NOUN', 'ADJF', 'ADJS'] and pos2 in ['NOUN', 'ADJF', 'ADJS']):
         continue
 
       # Проверяем согласование по роду, числу и падежу
@@ -66,3 +67,4 @@ for sentence in sentences:
 for pair in pairs:
 
   print(f'{pair[0]} {pair[1]}')
+
